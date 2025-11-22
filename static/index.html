@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Agent Tourism System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Multi-Agent Tourism System</h1>
+            <p class="subtitle">Plan your trips with weather and attraction information</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="queryInput" 
+                        placeholder="Enter your query (e.g., 'I'm going to go to Bangalore, let's plan my trip.')"
+                        autocomplete="off"
+                    >
+                    <button id="submitBtn" onclick="processQuery()">
+                        <span id="btnText">Search</span>
+                        <span id="btnLoader" class="loader" style="display: none;"></span>
+                    </button>
+                </div>
+                
+                <div class="examples">
+                    <p class="examples-title">Try these examples:</p>
+                    <div class="example-buttons">
+                        <button class="example-btn" onclick="fillExample(0)">Places Only</button>
+                        <button class="example-btn" onclick="fillExample(1)">Weather Only</button>
+                        <button class="example-btn" onclick="fillExample(2)">Both</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="responseSection" class="response-section" style="display: none;">
+                <div class="response-header">
+                    <h2>Response</h2>
+                    <button class="clear-btn" onclick="clearResponse()">Clear</button>
+                </div>
+                <div id="responseContent" class="response-content"></div>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <div class="error-content">
+                    <span class="error-icon">⚠️</span>
+                    <span id="errorMessage"></span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by Open-Meteo, Nominatim, and Overpass APIs</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+
